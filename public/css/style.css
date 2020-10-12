@@ -1,10 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Mulish&family=Roboto&display=swap');
 
 
 
 body {
   background-color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+header {
+  z-index: 9999;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  align-items: center;
+  padding: 0 10%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2); ;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav__links {
+  list-style: none;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+  padding-top: 15px;
+}
+
+.nav__links li a {
+  transition: all 0.3 ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+header a button {
+  box-sizing: border-box;
+  border: 1px solid #DC6156;
+  background-color: white;
+  color: #DC6156;
+  padding: 5px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(220, 97, 86);
 }
 
 .jumbotron {
@@ -70,11 +137,13 @@ body {
 
 .our-client {
  text-align: center;   
+ margin-bottom: 95px;
 }
 
 .client-item {
-    width: 500px;
-    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .client-img {
@@ -82,6 +151,70 @@ body {
   width: auto;
   margin-left: 50px;
 }
+
+/* Marquee */
+:root {
+  --marquee-width: 60vw;
+  --marquee-height: 15vh;
+  /* --marquee-elements: 12; */ /* defined with JavaScript */
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+
+.marquee {
+  width: var(--marquee-width);
+  height: var(--marquee-height);
+  color: #eee;
+  overflow: hidden;
+  position: relative;
+}
+.marquee:before, .marquee:after {
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  height: 100%;
+  content: "";
+  z-index: 1;
+}
+
+.marquee-content {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  animation: scrolling var(--marquee-animation-duration) linear infinite;
+}
+/* .marquee-content:hover {
+  animation-play-state: paused;
+} */
+@keyframes scrolling {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+}
+.marquee-content li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center; */
+  flex-shrink: 0;
+  width: var(--marquee-element-width);
+  max-height: 100%;
+  white-space: nowrap;
+}
+
+.marquee-content li img {
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  html { font-size: 12px; }
+  :root {
+    --marquee-width: 100vw;
+    --marquee-height: 16vh;
+    --marquee-elements-displayed: 3;
+  }
+}
+/* end marquee */
 
 .cta-sec {
   text-align: center;
@@ -167,23 +300,74 @@ body {
   padding: 0 ;
 }
 
+/* footer */
 .footer {
   background-color: #2A394E;
-  height: 240px;
+  font-size: 10pt;
+  padding: 20px;
+  color: white;
 }
 
+.footer .container.wrap-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer .container .navigasi {
+  box-sizing: border-box;
+}
+
+.footer .container .navigasi.f-logo {
+  width: 100% !important;
+  margin-bottom: 10px;
+}
+
+.footer .container .navigasi.f-ctn {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer .container .navigasi.f-ctn a {
+  font-size: 0.8em;
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 576px) { 
+
+  .footer .container .navigasi {
+    flex : 1;
+    width: 25%;
+  }
+
+  .footer .container .navigasi.f-logo {
+    flex: 2;
+  }
+
+}
+
+/* end footer */
+
+
 @media (min-width: 992px) {
+  nav.navbar {
+    background-color: white;
+    z-index: 99999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  }
   .jumbotron .display-4 {
     font-size: 48pt;
     margin-top: 120px;
   } 
   .nav-link {
-    text-transform: uppercase;
     margin-right: 30px;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 500;
     padding: 0;
-    color: #2A394E !important;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    color: #5a5b5d !important;
   }
   .navbar-nav {
     margin: 0;
@@ -229,10 +413,6 @@ body {
     margin-bottom: 30px;
   }
 
-  .our-client {
-
-  }
-
   .cta-sec {
     background-size: 600px auto;
     background-repeat: no-repeat;
@@ -267,5 +447,6 @@ body {
   .testi-sec .testi-profile .profile-company {
     font-size: 12px;
   }
+
 
 }

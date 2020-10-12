@@ -95,15 +95,19 @@
       <div class="our-client">
         <h4 class="mb-5">Our Clients</h4>
         <div class="client-item">
-          <marquee behavior="scroll" direction="left">
-            <img class="client-img" src="{{ asset('img/image/cl1.jpg') }}" alt="">
-            <img class="client-img" src="{{ asset('img/image/cl2.jpg') }}" alt="">
-            <img class="client-img" src="{{ asset('img/image/cl3.png') }}" alt="">
-            <img class="client-img" src="{{ asset('img/image/cl4.png') }}" alt="">
-            <img class="client-img" src="{{ asset('img/image/cl5.jpg') }}" alt="">
-
-          </marquee>
+          <div class="marquee">
+            <ul class="marquee-content">
+              <li><img class="client-img" src="{{ asset('img/image/cl1.jpg') }}" alt=""></li>
+              <li><img class="client-img" src="{{ asset('img/image/cl2.jpg') }}" alt=""></li>
+              <li><img class="client-img" src="{{ asset('img/image/cl3.png') }}" alt=""></li>
+              <li><img class="client-img" src="{{ asset('img/image/cl4.png') }}" alt=""></li>
+              <li><img class="client-img" src="{{ asset('img/image/cl5.jpg') }}" alt=""></li>
+              
+            </ul>
+          </div>
         </div>
+
+        
       </div>
 
       
@@ -128,29 +132,37 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-outline-danger">Go somewhere</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">Read more.</a>
             </div>
           </div>
         </div>
-
         <div class="col-lg">
           <div class="card">
             <img src="{{ asset('img/image/card1.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-outline-danger">Go somewhere</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">Read more.</a>
             </div>
           </div>
         </div>
-
         <div class="col-lg">
           <div class="card">
             <img src="{{ asset('img/image/card1.jpg') }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-outline-danger">Go somewhere</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">Read more.</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="card">
+            <img src="{{ asset('img/image/card1.jpg') }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-outline-danger btn-sm">Read more.</a>
             </div>
           </div>
         </div>
